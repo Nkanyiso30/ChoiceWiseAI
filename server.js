@@ -1316,26 +1316,6 @@ app.get("/api/test", (req, res) => {
   });
 });
 
-//error handlor
-// API route not found
-app.use("/api", (req, res) => {
-  res.status(404).json({
-    error: "API route not found.",
-  });
-});
-
-// Global error handler
-app.use((error, req, res, next) => {
-  console.error("Unhandled error:", error.message);
-
-  res.status(500).json({
-    error:
-      process.env.NODE_ENV === "production"
-        ? "Something went wrong. Please try again."
-        : error.message,
-  });
-});
-
 app.get("/api/gemini-test", async (req, res) => {
   try {
     if (!hasValidGeminiKey()) {
