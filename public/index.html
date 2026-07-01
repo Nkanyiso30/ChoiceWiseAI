@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChoiceWise AI - Scam & Decision Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-logo">CW</span>
+    <span>ChoiceWise AI</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="#homeSection">Home</a>
+    <a href="#howItWorksSection" class="public-nav-link">How it Works</a>
+    <a href="#pricingSection" class="public-nav-link">Pricing</a>
+    <a href="#authSection" id="navLoginLink" class="nav-login-link">Login</a>
+    <a href="#appSection" id="navDashboardLink" class="nav-dashboard-link hidden">Dashboard</a>
+  </nav>
+</header>
+  <main class="app">
+
+    <section class="hero" id="homeSection">
+      <div class="badge">ChoiceWise AI</div>
+
+      <h1>Think twice before you trust, buy, sign, or decide.</h1>
+
+      <p>
+        Paste a suspicious message, email, job offer, or online store message.
+        ChoiceWise checks the risk, explains red flags, and gives safe actions.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#authSection" class="hero-btn primary-hero-btn">Start Free Trial</a>
+        <a href="#howItWorksSection" class="hero-btn secondary-hero-btn">See How It Works</a>
+      </div>
+
+      <div class="hero-preview">
+        <div class="preview-header">
+          <span class="preview-dot red-dot"></span>
+          <span class="preview-dot yellow-dot"></span>
+          <span class="preview-dot green-dot"></span>
+        </div>
+
+        <div class="preview-content">
+          <div>
+            <p class="preview-label">Example Analysis</p>
+            <h3>Suspicious Job Offer</h3>
+          </div>
+
+          <div class="preview-score">
+            <span>Risk Score</span>
+            <strong>82/100</strong>
+          </div>
+        </div>
+
+        <div class="preview-warning">
+          <strong>High Risk</strong>
+          <p>Requests payment before employment and creates pressure to act quickly.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="howItWorksSection" class="how-section">
+  <h2>How ChoiceWise Works</h2>
+
+  <p class="how-subtitle">
+    Get a clear risk check before you trust, buy, sign, or decide.
+  </p>
+
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="step-number">1</div>
+      <h3>Paste the message</h3>
+      <p>
+        Copy a suspicious SMS, WhatsApp message, email, job offer, or online store message.
+      </p>
+    </div>
+
+    <div class="how-card">
+      <div class="step-number">2</div>
+      <h3>Choose a category</h3>
+      <p>
+        Tell ChoiceWise what you are checking, such as a job offer, email, contract, or online store.
+      </p>
+    </div>
+
+    <div class="how-card">
+      <div class="step-number">3</div>
+      <h3>Get a risk report</h3>
+      <p>
+        See the risk score, red flags, safe actions, confidence level, and recommendation.
+      </p>
+    </div>
+  </div>
+</section>
+    <section id="pricingSection" class="pricing-section">
+  <h2>Simple Pricing</h2>
+
+  <p class="pricing-subtitle">
+    Start free. Upgrade when you need more scans.
+  </p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>Free Trial</h3>
+
+      <p class="price">$0</p>
+
+      <p class="plan-note">For testing ChoiceWise AI</p>
+
+      <ul>
+        <li>30-day free trial</li>
+        <li>10 scam checks</li>
+        <li>AI risk score</li>
+        <li>Red flags and safe actions</li>
+        <li>Private scan history</li>
+      </ul>
+
+      <a href="#authSection" class="pricing-btn secondary-btn">
+        Start Free Trial
+      </a>
+    </div>
+
+    <h3>Scan Credits Pack</h3>
+
+<p class="price">$5<span>/once</span></p>
+
+<p class="plan-note">For users who need more checks</p>
+
+<ul>
+  <li>100 extra AI scam checks</li>
+  <li>One-time payment</li>
+  <li>No monthly subscription</li>
+  <li>Private scan history</li>
+  <li>Buy again whenever credits run out</li>
+</ul>
+
+<a href="#authSection" class="pricing-btn">
+  Buy Credits
+</a>
+</section>
+
+    <section id="authSection" class="checker-card">
+      <h2>Create account or login</h2>
+
+      <div class="auth-grid">
+        <div class="auth-box">
+          <h3>Register</h3>
+
+          <label for="registerName">Name</label>
+          <input type="text" id="registerName" placeholder="Your name" />
+
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" placeholder="you@example.com" />
+
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" placeholder="Minimum 6 characters" />
+
+          <button id="registerBtn">Create Account</button>
+        </div>
+
+        <div class="auth-box">
+          <h3>Login</h3>
+
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="you@example.com" />
+
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Your password" />
+
+          <button id="loginBtn">Login</button>
+        </div>
+      </div>
+
+      <p id="authMessage" class="privacy-note"></p>
+    </section>
+
+    <section id="appSection" class="hidden">
+      <div class="dashboard-top">
+        <div>
+          <h2>Dashboard</h2>
+          <p id="userInfo" class="privacy-note"></p>
+          <p id="usageInfo" class="privacy-note"></p>
+          <button id="upgradeBtn" class="upgrade-btn hidden">Buy 100 Scan Credits</button>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+
+      <div class="stats-grid">
+  <div class="stat-card">
+    <p>Total Scans used</p>
+    <h3 id="totalScansStat">0</h3>
+  </div>
+
+  <div class="stat-card">
+    <p>High Risk</p>
+    <h3 id="highRiskStat">0</h3>
+  </div>
+
+  <div class="stat-card">
+    <p>Medium Risk</p>
+    <h3 id="mediumRiskStat">0</h3>
+  </div>
+
+  <div class="stat-card">
+    <p>Trial Remaining</p>
+    <h3 id="remainingStat">0</h3>
+  </div>
+</div>
+
+      <section class="checker-card">
+        <h2>Scam Message Checker</h2>
+        <label for="categorySelect">What are you checking?</label>
+
+<select id="categorySelect">
+  <option value="General Message">General Message</option>
+  <option value="Job Offer">Job Offer</option>
+  <option value="Online Store">Online Store</option>
+  <option value="WhatsApp Message">WhatsApp Message</option>
+  <option value="Email">Email</option>
+  <option value="Contract">Contract</option>
+</select>
+
+        <label for="messageInput">Paste message here</label>
+
+        <textarea
+          id="messageInput"
+          placeholder="Example: Congratulations, you have been selected for a remote job. Pay a small registration fee to continue..."
+        ></textarea>
+
+        <button id="analyzeBtn">Analyze Message</button>
+
+        <p class="privacy-note">
+          Do not paste real passwords, OTPs, card numbers, or private banking details.
+        </p>
+
+        <div id="resultBox" class="result-box hidden"></div>
+
+        <div class="history-card">
+  <div class="history-header">
+    <h2>Recent Scans</h2>
+    <button id="clearHistoryBtn" class="small-danger-btn">Clear All</button>
+  </div>
+
+  <div id="historyList"></div>
+</div>
+<div class="danger-zone">
+  <h2>Account Safety</h2>
+
+  <p>
+    You can delete your scan data or permanently delete your account.
+    This action should be used carefully.
+  </p>
+
+  <div class="danger-actions">
+    <button id="deleteDataBtn" class="small-danger-btn">
+      Delete My Scan Data
+    </button>
+
+    <button id="deleteAccountBtn" class="delete-account-btn">
+      Delete My Account
+    </button>
+  </div>
+</div>
+      </section>
+    </section>
+  </main>
+  <footer class="site-footer">
+  <div class="footer-brand">
+    <strong>ChoiceWise AI</strong>
+    <p>Think twice before you trust, buy, sign, or decide.</p>
+  </div>
+
+  <div class="footer-links">
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
