@@ -108,6 +108,10 @@ publicNavLinks.forEach((link) => {
 }
 
 async function apiRequest(url, options = {}) {
+  const apiBase = window.location.origin;
+  const path = url.startsWith("/") ? url : `/${url}`;
+  const fullUrl = `${apiBase}${path}`;
+
   const headers = {
     "Content-Type": "application/json",
     ...(options.headers || {}),
@@ -117,16 +121,23 @@ async function apiRequest(url, options = {}) {
     headers.Authorization = `Bearer ${token}`;
   }
 
-  const response = await fetch(url, {
+  const response = await fetch(fullUrl, {
     ...options,
     headers,
     cache: options.cache || "no-store",
   });
 
-  const data = await response.json();
+  const text = await response.text();
+  let data;
+
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch (parseError) {
+    throw new Error(`API returned non-JSON response:\n${text}`);
+  }
 
   if (!response.ok) {
-    throw new Error(data.error || "Something went wrong.");
+    throw new Error(data.error || `HTTP ${response.status}: ${response.statusText}`);
   }
 
   return data;

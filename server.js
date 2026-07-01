@@ -65,18 +65,22 @@ const allowedOrigins = [
   "http://localhost:5000",
 ].filter(Boolean);
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+const corsOptions = {
+  credentials: true,
+};
 
-      return callback(new Error("Not allowed by CORS"));
-    },
-    credentials: true,
-  })
-);
+if (process.env.NODE_ENV === "production") {
+  corsOptions.origin = true;
+} else {
+  corsOptions.origin = function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error("Not allowed by CORS"));
+  };
+}
+
+app.use(cors(corsOptions));
 
 // Body limits
 app.use(
